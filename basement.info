@@ -1,0 +1,70 @@
+; ----------------------------------------------------------------------
+; THEME INFO -----------------------------------------------------------
+; ----------------------------------------------------------------------
+
+name = Basement
+description = Build your theme from scratch with the right tools !
+core = 7.x
+engine = phptemplate
+
+
+; ----------------------------------------------------------------------
+; STYLESHEETS  ---------------------------------------------------------
+; ----------------------------------------------------------------------
+
+; The well kwown alternative to reset CSS
+stylesheets[all][] = css/lib/normalize.css
+
+; Our Drupal-proof reset CSS
+stylesheets[all][] = css/lib/basement.css
+
+; Even the print stylesheet must be call for media=all. See h5bp.com/r
+stylesheets[all][] = css/lib/print.css
+
+; YOUR stylesheet
+stylesheets[all][] = css/style.css
+
+; LESS users should comment the line below, and play with main.less 
+; You must have LESS module installed to compile .less files
+;stylesheets[all][] = css/main.less
+
+
+; ----------------------------------------------------------------------
+; SCRIPTS  -------------------------------------------------------------
+; ----------------------------------------------------------------------
+
+scripts[] = js/basement.js
+scripts[] = js/main.js
+
+
+; ----------------------------------------------------------------------
+; REGIONS --------------------------------------------------------------
+; ----------------------------------------------------------------------
+
+;-- Required Regions
+regions[page_top]     = Page Top
+regions[page_bottom]  = Page Bottom
+regions[help]         = Help
+
+;-- Other Regions
+regions[header]           = Header
+regions[content]          = Content
+regions[aside]            = Aside
+regions[footer]           = Footer
+
+
+; ----------------------------------------------------------------------
+; OPTIONS --------------------------------------------------------------
+; See theme settings page on admin/appearance/settings
+; Doc: http://drupal.org/node/221905
+; ----------------------------------------------------------------------
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu

@@ -1,0 +1,31 @@
+/** ***************************************************************** */
+/*
+ * basement.css
+ */
+/** ***************************************************************** */
+
+
+/*
+ * Responsive image
+ */
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+ * Prevent max-width from affecting Google Maps
+ * From reset.less by Twitter Bootstrap
+ */
+#map_canvas img {max-width: none;}
+
+
+/*
+ * Inner padding and border oddities in FF3/4
+ * From reset.less by Twitter Bootstrap
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner { 
+  padding: 0;
+  border: 0;
+}
