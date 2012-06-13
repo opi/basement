@@ -17,8 +17,7 @@
     <?php print $styles; ?>
 
     <!-- IE Stuff. Important ones, must be printed as soon as possible -->
-    <?php print $html5shiv; ?>
-    <?php print $repond; ?>
+    <?php print render($respond); ?>
     
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php print $icon_path; ?>/favicon.ico" />
@@ -39,6 +38,6 @@
       <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
       <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
-    <?php print $placeholder; ?>
+    <?php print render($placeholder); ?>
   </body>
 </html>

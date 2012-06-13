@@ -11,6 +11,15 @@ function basement_html_head_alter(&$head_elements) {
     'charset' => 'utf-8',
   );
   
+  foreach($head_elements as $k => $head_element) {
+    // Remove default favicon. We manage that directly in page.tpl, and 
+    // in the 'icon' folder of the theme.
+    // Theme settings page allow us to change favicon but not apple icon. 
+    if (strpos($k, 'drupal_add_html_head_link:shortcut icon') === 0) {
+      unset($head_elements[$k]);
+    }
+  }
+  
 } // basement_html_head_alter
 
 
@@ -52,7 +61,9 @@ function basement_preprocess_html(&$vars) {
   drupal_add_html_head($viewport, 'viewport');
   
   // HTML5 Shiv
+  // Must be printed 
   $html5shiv = array(
+    '#type' => 'html_tag',
     '#tag' => "script",
     '#prefix' => "<!--[if lt IE 9]>",
     '#value' => "",
@@ -61,10 +72,14 @@ function basement_preprocess_html(&$vars) {
       'src' => "//html5shiv.googlecode.com/svn/trunk/html5.js",
     ),
   );
-  $vars['html5shim'] = theme('html_tag', $html5shiv);
+  drupal_add_html_head($html5shiv, 'html5shiv');
   
   // Respond.js
-  $respond = array(
+  // Could not use drupal_add_html_head() because respond.js must be 
+  // references after all CSS, but not in footer.
+  // use render($respond);
+  $vars['respond'] = array(
+    '#type' => 'html_tag',
     '#tag' => "script",
     '#prefix' => "<!--[if lt IE 9]>",
     '#value' => "",
@@ -73,10 +88,12 @@ function basement_preprocess_html(&$vars) {
       'src' => $path_to_theme . "/js/lib/respond.min.js",
     ),
   );
-  $vars['respond'] = theme('html_tag', $respond);
   
   // jQuery Placeholder
-  $placeholder = array(
+  // Could not use drupal_add_js because we target IE9- only. 
+  // use render($placeholder);
+  $vars['placeholder'] = array(
+    '#type' => 'html_tag',
     '#tag' => "script",
     '#prefix' => "<!--[if lt IE 10]>",
     '#value' => "",
@@ -85,7 +102,6 @@ function basement_preprocess_html(&$vars) {
       'src' => $path_to_theme . "/js/lib/jquery.placeholder.min.js",
     ),
   );
-  $vars['placeholder'] = theme('html_tag', $placeholder);
 
 
   // Force latest IE rendering engine (even in intranet) & Chrome Frame
