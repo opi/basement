@@ -58,7 +58,7 @@
     <?php print render($title_suffix); ?>
     <?php endif; ?>
     
-    <?php if (!empty($tabs['primary'])): ?>
+    <?php if (!empty($tabs['#primary'])): ?>
     <div id="tabs"><?php print render($tabs); ?></div>
     <?php endif; ?>
     

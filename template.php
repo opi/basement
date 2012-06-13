@@ -141,7 +141,7 @@ function basement_preprocess_page(&$vars) {
   }
 
   // Tabs
-  if ($vars['tabs']) {
+  if (!empty($vars['tabs']['#primary'])) {
     $vars['classes_array'][] = 'with-tabs';
   }
 
