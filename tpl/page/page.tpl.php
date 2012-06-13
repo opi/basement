@@ -62,7 +62,7 @@
     <div id="tabs"><?php print render($tabs); ?></div>
     <?php endif; ?>
     
-    <?php if ($help): ?>
+    <?php if ($page['help']): ?>
     <div id="help"><?php print render($page['help']); ?></div>
     <?php endif; ?>
     
