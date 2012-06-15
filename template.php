@@ -176,7 +176,7 @@ function basement_preprocess_node(&$vars) {
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['view_mode'];
   $vars['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $vars['view_mode'];
   $vars['classes_array'][] = 'node-' . $vars['view_mode'];
-  $vars['classes_array'][] = 'node-' . $node-type . '-' . $vars['view_mode'];
+  $vars['classes_array'][] = 'node-' . $node->type . '-' . $vars['view_mode'];
 
   // HTML5 submitted info
   $vars['datetime'] = format_date($node->created, 'custom', 'c');
