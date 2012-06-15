@@ -18,10 +18,14 @@ function basement_drush_command() {
     'aliases' => array('bc'),
     'arguments' => array(
       'name' => 'A name for your theme.',
+    ),
+    'options' => array(
       'machine_name' => '(optional)[a-z, 0-9] A machine-readable name for your theme.',
+      'destination' => 'Path to which the project will be copied, relative to the drupal root',
     ),
     'examples' => array(
-      'example[1]' => 'drush basement-construct --name=My theme name --machine_name=mythemename',
+      'example[1]' => 'drush basement-construct "My theme name" --machine_name=mythemename',
+      'example[2]' => 'drush basement-construct "My theme name" --destination=sites/all/themes/custom',
     ),
   );
 
@@ -51,12 +55,17 @@ function drush_basement_construct($name = NULL, $machine_name = NULL) {
   $machine_name = !empty($machine_name) ? preg_replace('/[^a-z0-9_]+/', '', strtolower($machine_name)) : preg_replace('/[^a-z0-9_]+/', '', strtolower($name));
   $basement_path = drush_locate_root() . '/' . drupal_get_path('theme', 'basement');
 
-  // From Basement's location, we move up one directory and construct the path where
-  // our sub theme will be created.
-  // @TODO provide an option to set --directory
-  $themes_path = explode('/', $basement_path);
-  array_pop($themes_path);
-  $newtheme_path = implode('/', $themes_path) . '/' . $machine_name;
+  $destination = drush_get_option('destination');
+  if (!empty($destination)) {
+    $newtheme_path = drush_locate_root() . '/' . $destination . '/' . $machine_name;
+  }
+  else {
+    // From Basement's location, we move up one directory and construct the path where
+    // our sub theme will be created.
+    $themes_path = explode('/', $basement_path);
+    array_pop($themes_path);
+    $newtheme_path = implode('/', $themes_path) . '/' . $machine_name;
+  }
 
   // Make a fresh copy of the original starter kit.
   $s = drush_copy_dir("$basement_path/", $newtheme_path);
@@ -65,12 +74,12 @@ function drush_basement_construct($name = NULL, $machine_name = NULL) {
   }
 
   // Remove drush file from the new theme
-  drush_op('unlink', "$newtheme_path/basement.drush.inc")
+  drush_op('unlink', "$newtheme_path/basement.drush.inc");
 
   // Rename the info file and fill in the theme name.
   drush_op('rename', "$newtheme_path/basement.info", "$newtheme_path/$machine_name.info");
-  drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.php", 'Basement', "$name");
-  drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.php", 'the right tools', "Basement theme");
+  drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'Basement', "$name");
+  drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'the right tools', "Basement theme");
   
   // Template.php
   drush_op('basement_file_str_replace', "$newtheme_path/template.php", 'basement', "$machine_name");
