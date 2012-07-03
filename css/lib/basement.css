@@ -6,6 +6,17 @@
 
 
 /**
+ * We support IE8+ only, so we could use the border-box model
+ * see http://paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+* {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+
+/**
  * Responsive images & medias
  * Prevent max-width from affecting Google Maps
  * From reset.less by Twitter Bootstrap
