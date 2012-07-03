@@ -15,7 +15,7 @@ engine = phptemplate
 ; The well kwown alternative to reset CSS
 stylesheets[all][] = css/lib/normalize.css
 
-; Our Drupal-proof reset CSS
+; Usefull stuff not included in normalize.css, Drupal reset, responsive medias
 stylesheets[all][] = css/lib/basement.css
 
 ; Even the print stylesheet must be call for media=all. See h5bp.com/r
