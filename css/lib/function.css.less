@@ -1,0 +1,106 @@
+/** ********************************************************************
+ * CSS 3
+ * ****************************************************************** */
+
+
+/* Opacity */
+.opacity(@opacity:0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+
+
+/* Rounded corners */
+.rounded(@radius:0) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+}
+.borderRadius(@topright: 0, @bottomright:0, @bottomleft:0, @topleft:0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+}
+
+
+/* Shadow */
+.dropShadow(@x-axis:0, @y-axis: 1px, @blur:2px, @alpha:0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.innerShadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha:0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.boxShadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+
+/* Gradient */
+.gradient(@color:#F5F5F5, @start:#EEE, @stop:#FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               @start,
+                               @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+}
+
+
+/* Scale */
+.scale(@ratio:1.5){
+	-webkit-transform:scale(@ratio);
+ 	-moz-transform:scale(@ratio);
+	transform:scale(@ratio);
+}
+
+
+/* Rotation */
+.rotate(@deg:90deg){
+	-webkit-transform:rotate(@deg);
+ 	-moz-transform:rotate(@deg);
+	transform:rotate(@deg);
+}
+
+
+/* Columns */
+.column(@count:1, @gap:0) {
+  -moz-column-count: @count;
+  -webkit-column-count: @count;
+  -o-column-count: @count;
+  column-count: @count;
+  -moz-column-gap: @gap;
+  -webkit-column-gap: @gap;
+  -o-column-gap: @gap;
+  column-gap: @gap;
+}
+
+
+/* Transition */
+.transition(@effect:all, @duration:0.15s, @ease:ease-out) {
+  -webkit-transition: @effect @duration @ease;
+  -moz-transition: @effect @duration @ease;
+  transition: @effect @duration @ease;
+}
+
