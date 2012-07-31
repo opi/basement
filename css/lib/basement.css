@@ -21,12 +21,11 @@
  * Prevent max-width from affecting Google Maps
  * From reset.less by Twitter Bootstrap
  */
-iframe,
-embed,
-object,
-img {
+img, table, td, blockquote, code, pre, textarea, input, 
+iframe, embed, object, img {
   vertical-align: middle;
   max-width: 100%;
+  height:auto;
 }
 #map_canvas img {max-width: none;}
 
