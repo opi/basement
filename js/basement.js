@@ -43,6 +43,8 @@
     attach: function(context, settings) {
       //$.extend(true, Drupal.settings, settings);
 
+      // <html> js class
+      $('html').removeClass('no-js') // addClass('js') is already done in misc/drupal.js
 
       /* Load images in placeholders */
       Drupal.basement.imagePlaceholder();
