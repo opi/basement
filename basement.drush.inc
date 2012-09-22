@@ -20,11 +20,11 @@ function basement_drush_command() {
       'name' => 'A name for your theme.',
     ),
     'options' => array(
-      'machine_name' => '(optional)[a-z, 0-9] A machine-readable name for your theme.',
+      'machine-name' => '(optional)[a-z, 0-9] A machine-readable name for your theme.',
       'destination' => 'Path to which the project will be copied, relative to the drupal root',
     ),
     'examples' => array(
-      'example[1]' => 'drush basement-construct "My theme name" --machine_name=mythemename',
+      'example[1]' => 'drush basement-construct "My theme name" --machine-name=mythemename',
       'example[2]' => 'drush basement-construct "My theme name" --destination=sites/all/themes/custom',
     ),
   );
@@ -52,7 +52,7 @@ function drush_basement_construct($name = NULL) {
     return;
   }
   
-  $machine_name = drush_get_option('machine_name');
+  $machine_name = drush_get_option('machine-name');
   $machine_name = !empty($machine_name) ? preg_replace('/[^a-z0-9_]+/', '', strtolower($machine_name)) : preg_replace('/[^a-z0-9_]+/', '', strtolower($name));
   $basement_path = drush_locate_root() . '/' . drupal_get_path('theme', 'basement');
 
