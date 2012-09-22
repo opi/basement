@@ -80,6 +80,7 @@ function drush_basement_construct($name = NULL) {
   // Rename the info file and fill in the theme name.
   drush_op('rename', "$newtheme_path/basement.info", "$newtheme_path/$machine_name.info");
   drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'Basement', "$name");
+  drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'basement', "$machine_name");
   drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'the right tools', "Basement theme");
   
   // Template.php
