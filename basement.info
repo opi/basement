@@ -15,9 +15,6 @@ engine = phptemplate
 ; The well kwown alternative to reset CSS
 stylesheets[all][] = css/lib/normalize.css
 
-; Usefull stuff not included in normalize.css, Drupal reset, responsive medias
-stylesheets[all][] = css/lib/basement.css
-
 ; Even the print stylesheet must be call for media=all. See h5bp.com/r
 stylesheets[all][] = css/lib/print.css
 
@@ -26,7 +23,7 @@ stylesheets[all][] = css/style.css
 
 ; LESS users should comment the line below, and play with main.less 
 ; You must have LESS module installed to compile .less files
-;stylesheets[all][] = css/main.less
+;stylesheets[all][] = css/style.less
 
 
 ; ----------------------------------------------------------------------
