@@ -52,14 +52,14 @@ scripts[] = js/basement.js
 ; ----------------------------------------------------------------------
 
 ;-- Required Regions
-regions[page_top]     = Page Top
-regions[page_bottom]  = Page Bottom
-regions[help]         = Help
+regions[page_top] = Page Top
+regions[page_bottom] = Page Bottom
+regions[help] = Help
 
 ;-- Other Regions
-regions[content]          = Content
-regions[aside]            = Aside
-regions[footer]           = Footer
+regions[content] = Content
+regions[aside] = Aside
+regions[footer] = Footer
 
 
 ; ----------------------------------------------------------------------
