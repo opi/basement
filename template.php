@@ -272,11 +272,20 @@ function basement_preprocess_field(&$vars) {
    * ex: field__field_faq_question
    * ex: field__field_faq_question__field_faq (here, bundle = field_collection field
    * ex: field__field_faq_answer
-
    */
 
-  // @TODO : need more theme suggestions ?
   
+  // Custom theme_hook_suggestions (no_markup & wrapper_only)
+  $wrapper_only_fields = array('field_myexample_field');
+  if (in_array($element['#field_name'], $wrapper_only_fields)) {
+    $vars['theme_hook_suggestions'][] = 'field__wrapper_only';
+  }
+
+  $no_markup_fields = array('field_myexample_field');
+  if (in_array($element['#field_name'], $no_markup_fields)) {
+    $vars['theme_hook_suggestions'][] = 'field__no_markup';
+  }
+
 } // basement_preprocess_field
 
 
