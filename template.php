@@ -108,8 +108,27 @@ function basement_preprocess_html(&$vars) {
   if (is_null(drupal_get_http_header('X-UA-Compatible'))) {
     drupal_add_http_header('X-UA-Compatible', 'IE=edge,chrome=1');
   }
-  
-  // <body> classes
+
+
+  /**
+   * <body> classes
+   */
+
+  // Remove default 'no-sidebars' class, because we don't use sidebar_(first/second)
+  foreach ($vars['classes_array'] as $key => $value) {
+    if ($value == 'no-sidebars') {
+      unset($vars['classes_array'][$key]);
+    }
+  }
+
+  // Alias classes, by virtual folders
+  $alias = explode('/', drupal_get_path_alias());
+  while(!empty($alias)) {
+    $vars['classes_array'][] = 'path-'.implode('-', $alias);
+    array_pop($alias);
+  }
+
+  // Node edit/add classes
   if (arg(0) == 'node') {
     if (arg(1) == 'add') {
       $vars['classes_array'][] = 'section-node-add';
