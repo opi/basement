@@ -30,18 +30,9 @@ stylesheets[all][] = css/style.css
 ; SCRIPTS  -------------------------------------------------------------
 ; ----------------------------------------------------------------------
 
-; HTML5 Placeholders polyfill for IE9-
-; from https://github.com/danielstocks/jQuery-Placeholder
-; Called in tpl/html.tpl.php, only for IE9-
-;scripts[] = js/lib/jquery.placeholder.min.js
-
 ; iOS Orientation Change Fix by Scott Jehl
 ; from https://github.com/scottjehl/iOS-Orientationchange-Fix
 scripts[] = js/lib/ios-orientationchange-fix.js
-
-; Respond.js, add support of mediaQueries in IE
-; from https://github.com/scottjehl/Respond
-scripts[] = js/lib/respond.min.js
 
 ; Main file, with basement behaviors
 scripts[] = js/basement.js
