@@ -262,5 +262,13 @@ function basement_preprocess_search_block_form(&$vars) {
  * Implements theme_breadcrumb().
  */
 function basement_breadcrumb($vars) {
-  // @TODO : is there something (html5 related) to do ?
+  if (!empty($vars['breadcrumb'])) {
+
+    // Provide a navigational heading to give context for breadcrumb links to
+    // screen-reader users. Make the heading invisible with .element-invisible.
+    $output = '<h2 class="element-invisible">' . t("You are here") . '</h2>';
+    // Output breadcrumb as list for a11y
+    $output .= '<ul><li>' . implode('</li><li>', $vars['breadcrumb']) . '</li></ul>';
+    return $output;
+  }
 }
