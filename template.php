@@ -138,6 +138,18 @@ function basement_preprocess_html(&$vars) {
     }
   }
 
+
+  /**
+   * Head title
+   */
+
+  // SEO: Append page number to title.
+  if (!empty($_GET['page']) && !empty($vars['head_title'])) {
+    $head_title = explode(' | ', $vars['head_title']);
+    $head_title[0] .= ', page '.check_plain($_GET['page']+1);
+    $vars['head_title'] = implode(' | ', $head_title);
+  }
+
 } // basement_preprocess_html
 
 
