@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, Drupal) {
 
   /** ********************************************************************
    * INIT
@@ -64,4 +64,4 @@
     }
   } // Drupal.behaviors.basement
 
-})(jQuery);
+})(jQuery, Drupal);
