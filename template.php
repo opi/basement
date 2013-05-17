@@ -260,7 +260,7 @@ function basement_preprocess_block(&$vars) {
   // Block title
   if(empty($vars['block']->subject)) {
     // Add a class to provide CSS for blocks without titles.
-    $vars['classes_array']['class'][] = 'block-without-title';
+    $vars['classes_array'][] = 'block-without-title';
   }
   else {
     // Adding a class to the title attributes
