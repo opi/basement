@@ -12,15 +12,21 @@
 /**
  * Responsive images & medias
  * Prevent max-width from affecting Google Maps
- * From reset.less by Twitter Bootstrap
+ * From reset Knacss of Raphaël Goetter
  */
-img, table, td, blockquote, code, pre, textarea, input, 
-iframe, embed, object, img {
-  vertical-align: middle;
+ 
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%;
-  height:auto;
 }
-#map_canvas img {max-width: none;}
+/* pictures */
+img {
+	height: auto;
+	vertical-align: middle;
+}
+/* Gmap3 max-width bug fix on images */
+#map_canvas img,
+.gmnoprint img {max-width: none;}
 
 
 /*
