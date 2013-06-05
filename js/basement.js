@@ -61,6 +61,18 @@
         }
       }
 
+      // Trigger backspace to empty drupal date/hour field
+      if (Drupal.settings.datePopup !== undefined) {
+        for (var id in Drupal.settings.datePopup) {
+         $('#'+id).bind('keyup', function(e){
+           var code = (e.keyCode ? e.keyCode : e.which);
+           if (code==46 || code==8) {
+             $(this).val("");
+           }
+         })
+        }
+      }
+
     }
   } // Drupal.behaviors.basement
 
