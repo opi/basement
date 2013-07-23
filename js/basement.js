@@ -50,7 +50,7 @@
       Drupal.basement.imagePlaceholder();
 
       /* Enlarge click zone */
-      Drupal.basement.enlargeYourClick($('.node-teaser'));
+      Drupal.basement.enlargeYourClick($('.example-selector'));
 
 
       /* IE Specific script */
