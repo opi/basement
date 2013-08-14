@@ -15,19 +15,20 @@
 }
 
 
-/**
- * Responsive images & medias
- * Prevent max-width from affecting Google Maps
- * From reset.less by Twitter Bootstrap
- */
-img, table, td, blockquote, code, pre, textarea, input, 
-iframe, embed, object, img {
-  vertical-align: middle;
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%;
-  height:auto;
 }
+/* pictures */
+img {
+	height: auto;
+	vertical-align: middle;
+}
+/* Gmap3 max-width bug fix on images */
+#map_canvas img,
+.gmnoprint img {max-width: none;}
+
 .lt-ie9 img { width:auto; /*BUG IE8*/ }
-#map_canvas img {max-width: none;}
 
 
 /*
