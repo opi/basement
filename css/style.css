@@ -28,6 +28,8 @@ img {
 #map_canvas img,
 .gmnoprint img {max-width: none;}
 
+.lt-ie9 img { width:auto; /*BUG IE8*/ }
+
 
 /*
  * Inner padding and border oddities in FF3/4
