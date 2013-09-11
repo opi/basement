@@ -27,8 +27,14 @@
     $(selector).once('enlargeYourClick').click(function(e){
       // don't handle if user click on a link, or if he click with mouse wheel
       if (e.target.tagName != "A" && e.button != 1) {
-        var dest = $(this).find('a:first').attr('href');
-        if (dest) {window.location = dest};
+        var firstLink = $(this).find('a:first'),
+            dest = firstLink.attr('href'),
+            blank = firstLink.attr('target');
+        if (dest && !blank) {
+          window.location = dest
+        }else {
+          window.open(dest);
+        };
       }
     })
     .css({cursor: 'pointer'});
