@@ -288,6 +288,8 @@ function basement_preprocess_field(&$vars) {
    * ex: field__field_faq_question__field_faq (here, bundle = field_collection field
    * ex: field__field_faq_answer
    */
+   
+  $element = $vars['element'];
 
   
   // Custom theme_hook_suggestions (no_markup & wrapper_only)
