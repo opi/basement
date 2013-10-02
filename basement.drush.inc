@@ -102,6 +102,7 @@ function drush_basement_construct($name = NULL) {
   drush_pm_enable($machine_name);
 
   if (drush_confirm(dt("\nWould you like to set !name as your default theme?", array('!name' => $name)))) {
+    drush_op('theme_enable', array($machine_name));
     drush_op('variable_set', 'theme_default', $machine_name);
     drush_print(dt("!name was set as your default theme. \n", array('!name' => $name)));
   }
