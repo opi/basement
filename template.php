@@ -236,15 +236,7 @@ function basement_preprocess_node(&$vars) {
  * Implements hook_preprocess_entity().
  * Provided by Entity API module.
  */
-function basement_preprocess_entity(&$vars) {
-  // https://drupal.org/node/1462772#comment-6273404
-  foreach($vars['theme_hook_suggestions'] as &$suggestion) {
-    if (strpos($suggestion, 'entity__') !== 0) {
-      $suggestion = 'entity__' . $suggestion;
-    }
-  }
-}
-
+//function basement_preprocess_entity(&$vars) {}
 
 
 /**
