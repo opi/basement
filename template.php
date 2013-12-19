@@ -258,6 +258,12 @@ function basement_preprocess_block(&$vars) {
     // Adding a class to the title attributes
     $vars['title_attributes_array']['class'][] = 'title';
   }
+
+  // Adding content_classes variable to add classes to content
+  $vars['content_classes'] = '';
+  if (isset($block->content_classes)) {
+    $vars['content_classes'] .= ' ' . implode(' ', $vars['block']->content_classes);
+  }
   
   // @TODO add aria role support (see zen and adaptivetheme)
 
