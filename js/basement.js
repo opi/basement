@@ -36,7 +36,7 @@ if (!window.console.log) window.console.log = function () { };
             blank = firstLink.attr('target');
         if (dest && !blank) {
           window.location = dest
-        }else {
+        }else if (blank){
           window.open(dest);
         };
       }
