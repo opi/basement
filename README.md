@@ -10,8 +10,7 @@ Philosophy
 Basement is not a base theme.
 Basement is a tool to help you build your theme from scratch.
 
-Of course, you can download basement and rename every file and function, but
-who have time for this ? Hopefully, there's a drush command for that !
+Of course, you can download basement and rename every file and function, but who have time for this? Hopefully, there's a drush command for that!
 
 
 Using drush
