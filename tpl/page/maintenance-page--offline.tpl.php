@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
  * @file maintenance-page--offline.tpl.php
  * See http://api.drupal.org/api/drupal/modules!system!maintenance-page.tpl.php/7
- * 
+ *
  * See http://drupal.org/node/1089656#maintenance-suggestion
- * 
+ *
  */
 
   // Default variable
@@ -26,7 +26,7 @@
     <!-- IE Stuff. Important ones, must be printed as soon as possible -->
     <?php print $html5shiv; ?>
     <?php print $repond; ?>
-    
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php print $icon_path; ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php print $icon_path; ?>/apple-touch-icon.png" />
@@ -61,11 +61,11 @@
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
         <?php endif; ?>
         <?php endif; ?>
-                
+
         <div id="content">
         <?php print $content; ?>
         </div>
-        
+
       </div><!-- #main -->
 
     </div> <!-- #page -->

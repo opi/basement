@@ -2,7 +2,7 @@
 /**
  * @file search-block-form.tpl.php
  * See http://api.drupal.org/api/drupal/modules!search!search-block-form.tpl.php/7
- * 
+ *
  * Theme suggestions: none by default.
  */
 ?><div class="container-inline">

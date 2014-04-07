@@ -51,7 +51,7 @@ function drush_basement_construct($name = NULL) {
     drush_print(dt("\nWe can't create a basement with no name. \nPlease provide a name for the basement.\nEx. drush basement-construct \"Theme Name\"\n"));
     return;
   }
-  
+
   $machine_name = drush_get_option('machine-name');
   $machine_name = !empty($machine_name) ? preg_replace('/[^a-z0-9_]+/', '', strtolower($machine_name)) : preg_replace('/[^a-z0-9_]+/', '', strtolower($name));
   $basement_path = drush_locate_root() . '/' . drupal_get_path('theme', 'basement');
@@ -82,7 +82,7 @@ function drush_basement_construct($name = NULL) {
   drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'Basement', "$name");
   drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'basement', "$machine_name");
   drush_op('basement_file_str_replace', "$newtheme_path/$machine_name.info", 'the right tools', "Basement theme");
-  
+
   // Template.php
   drush_op('basement_file_str_replace', "$newtheme_path/template.php", 'basement', "$machine_name");
 

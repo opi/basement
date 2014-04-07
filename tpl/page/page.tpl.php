@@ -1,14 +1,14 @@
-<?php 
+<?php
 /**
  * @file page.tpl.php
  * See http://api.drupal.org/api/drupal/modules!system!page.tpl.php/7
- * 
+ *
  * Theme suggestions:
  * - page.tpl.php
  * - page--front.tpl.php
  * - page--PATH.tpl.php (ex: page--node.tpl, page--node--123.tpl ...
  * - page--node--NODE_TYPE.tpl.php (by basement)
- * 
+ *
  * See http://drupal.org/node/1089656#page-suggestion
  */
 ?><div id="page" class="<?php print $classes; ?>" <?php print $attributes;?>>
@@ -57,25 +57,25 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
     <?php endif; ?>
-    
+
     <?php if (!empty($tabs['#primary'])): ?>
     <div id="tabs"><?php print render($tabs); ?></div>
     <?php endif; ?>
-    
+
     <?php if ($page['help']): ?>
     <div id="help"><?php print render($page['help']); ?></div>
     <?php endif; ?>
-    
+
     <?php if ($action_links): ?>
     <ul class="action-links"><?php print render($action_links); ?></ul>
     <?php endif; ?>
-    
+
     <?php if ($page['content']): ?>
     <div id="content">
     <?php print render($page['content']); ?>
     </div>
     <?php endif; ?>
-    
+
   </div><!-- #main -->
 
   <?php if ($page['aside']): ?>
@@ -83,11 +83,11 @@
   <?php print render($page['aside']); ?>
   </aside><!-- #aside -->
   <?php endif; ?>
-  
+
   <?php if ($page['footer']): ?>
   <footer id="footer">
     <?php print render($page['footer']); ?>
   </footer><!-- #footer -->
   <?php endif; ?>
-  
+
 </div> <!-- #page -->

@@ -14,7 +14,7 @@
  * Prevent max-width from affecting Google Maps
  * From reset Knacss of Raphaël Goetter
  */
- 
+
 /* max values */
 img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%;
@@ -36,7 +36,7 @@ img {
  * From reset.less by Twitter Bootstrap
  */
 button::-moz-focus-inner,
-input::-moz-focus-inner { 
+input::-moz-focus-inner {
   padding: 0;
   border: 0;
 }

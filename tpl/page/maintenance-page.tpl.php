@@ -1,12 +1,12 @@
-<?php 
+<?php
 /**
  * @file maintenance-page.tpl.php
  * See http://api.drupal.org/api/drupal/modules!system!maintenance-page.tpl.php/7
- * 
+ *
  * Theme suggestions:
  * - maintenance-page.tpl.php
  * - maintenance-page--offline.tpl.php Used when no access to database.
- * 
+ *
  * See http://drupal.org/node/1089656#maintenance-suggestion
  */
 ?><!DOCTYPE html>
@@ -21,7 +21,7 @@
     <!-- IE Stuff. Important ones, must be printed as soon as possible -->
     <?php print $html5shiv; ?>
     <?php print $repond; ?>
-    
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php print $icon_path; ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php print $icon_path; ?>/apple-touch-icon.png" />
@@ -63,17 +63,17 @@
         <?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php endif; ?>
-        
+
         <?php if ($help): ?>
         <div id="help"><?php print render($page['help']); ?></div>
         <?php endif; ?>
-                
+
         <?php if ($page['content']): ?>
         <div id="content">
         <?php print render($page['content']); ?>
         </div>
         <?php endif; ?>
-        
+
       </div><!-- #main -->
 
     </div> <!-- #page -->

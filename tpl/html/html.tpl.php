@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * @file html.tpl.php
  * See http://api.drupal.org/api/drupal/modules%21system%21html.tpl.php/7
- * 
+ *
  * Theme suggestions: None by default.
  */
 ?><!DOCTYPE html>
@@ -18,7 +18,7 @@
 
     <!-- IE Stuff. Important ones, must be printed as soon as possible -->
     <?php print render($respond); ?>
-    
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php print $icon_path; ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php print $icon_path; ?>/apple-touch-icon.png" />
@@ -30,7 +30,7 @@
     <?php print $page; ?>
     <?php print $page_bottom; ?>
     <?php print $scripts; ?>
-    
+
     <!-- IE Stuff. Less important -->
     <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
          chromium.org/developers/how-tos/chrome-frame-getting-started -->

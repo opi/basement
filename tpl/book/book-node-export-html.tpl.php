@@ -3,7 +3,7 @@
 /**
  * @file book-node-export-html.tpl.php
  * See http://api.drupal.org/api/drupal/modules%21book%21book-node-export-html.tpl.php/7
- * 
+ *
  * Theme suggestions: None by default.
  */
 ?><article id="node-<?php print $node->nid; ?>" class="section-<?php print $depth; ?>">

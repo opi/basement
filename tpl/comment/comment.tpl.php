@@ -2,11 +2,11 @@
 /**
  * @file comment.tpl.php
  * See http://api.drupal.org/api/drupal/modules%21comment%21comment.tpl.php/7
- * 
+ *
  * Theme suggestions:
  * - comment.tpl.php
  * - comment--node-TYPE.tpl.php
- * 
+ *
  * See http://drupal.org/node/1089656#comment-suggestion
  */
 ?><article class="<?php print $classes; ?>"<?php print $attributes; ?>>

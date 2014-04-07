@@ -2,11 +2,11 @@
 /**
  * @file search-result.tpl.php
  * See http://api.drupal.org/api/drupal/modules!search!search-result.tpl.php/7
- * 
+ *
  * Theme suggestions:
  * - search-result.tpl.php
  * - search-result--SEARCH_TYPE.tpl.php
- * 
+ *
  * See http://drupal.org/node/1089656#search-result-suggestion
  */
 ?><li class="<?php print $classes; ?>"<?php print $attributes; ?>>

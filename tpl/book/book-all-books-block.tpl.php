@@ -2,7 +2,7 @@
 /**
  * @file book-all-books-block.tpl.php
  * See http://api.drupal.org/api/drupal/modules%21book%21book-all-books-block.tpl.php/7
- * 
+ *
  * Theme suggestions: None by default.
  */
 ?>

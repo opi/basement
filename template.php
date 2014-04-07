@@ -5,21 +5,21 @@
  * Implements hook_html_head_alter().
  */
 function basement_html_head_alter(&$head_elements) {
-  
+
   // HTML5 style charset
   $head_elements['system_meta_content_type']['#attributes'] = array(
     'charset' => 'utf-8',
   );
-  
+
   foreach($head_elements as $k => $head_element) {
-    // Remove default favicon. We manage that directly in page.tpl, and 
+    // Remove default favicon. We manage that directly in page.tpl, and
     // in the 'icon' folder of the theme.
-    // Theme settings page allow us to change favicon but not apple icon. 
+    // Theme settings page allow us to change favicon but not apple icon.
     if (strpos($k, 'drupal_add_html_head_link:shortcut icon') === 0) {
       unset($head_elements[$k]);
     }
   }
-  
+
 } // basement_html_head_alter
 
 
@@ -46,7 +46,7 @@ function basement_process_html_tag(&$vars) {
  */
 function basement_preprocess_html(&$vars) {
   $path_to_theme = base_path() . drupal_get_path('theme', 'basement');
-  
+
   // (fav)icon path
   $vars['icon_path'] = $path_to_theme . '/icon';
 
@@ -59,9 +59,9 @@ function basement_preprocess_html(&$vars) {
     ),
   );
   drupal_add_html_head($viewport, 'viewport');
-  
+
   // HTML5 Shiv
-  // Must be printed 
+  // Must be printed
   $html5shiv = array(
     '#type' => 'html_tag',
     '#tag' => "script",
@@ -73,9 +73,9 @@ function basement_preprocess_html(&$vars) {
     ),
   );
   drupal_add_html_head($html5shiv, 'html5shiv');
-  
+
   // Respond.js
-  // Could not use drupal_add_html_head() because respond.js must be 
+  // Could not use drupal_add_html_head() because respond.js must be
   // references after all CSS, but not in footer.
   // use render($respond);
   $vars['respond'] = array(
@@ -88,9 +88,9 @@ function basement_preprocess_html(&$vars) {
       'src' => $path_to_theme . "/js/lib/respond.min.js",
     ),
   );
-  
+
   // jQuery Placeholder
-  // Could not use drupal_add_js because we target IE9- only. 
+  // Could not use drupal_add_js because we target IE9- only.
   // use render($placeholder);
   $vars['placeholder'] = array(
     '#type' => 'html_tag',
@@ -132,9 +132,9 @@ function basement_preprocess_html(&$vars) {
   if (arg(0) == 'node') {
     if (arg(1) == 'add') {
       $vars['classes_array'][] = 'section-node-add';
-    } 
+    }
     elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
-      $vars['classes_array'][] = 'section-node-' . arg(2); 
+      $vars['classes_array'][] = 'section-node-' . arg(2);
     }
   }
 
@@ -202,7 +202,7 @@ function basement_preprocess_page(&$vars) {
  */
 function basement_preprocess_node(&$vars) {
   $node = $vars['node'];
-  
+
   // Add view-mode & type template suggestions and classes
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['view_mode'];
   $vars['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $vars['view_mode'];
@@ -222,13 +222,13 @@ function basement_preprocess_node(&$vars) {
   else {
     $vars['submitted'] = '';
   }
-  
+
   // h1 title is displayed on node.tpl, duplicate page.tpl id & class
   if (node_is_page($node)) {
     $vars['title_attributes_array']['id'] = 'page-title';
     $vars['title_attributes_array']['class'] = 'title';
   }
-    
+
 } // basement_preprocess_node
 
 
@@ -258,7 +258,7 @@ function basement_preprocess_block(&$vars) {
     // Adding a class to the title attributes
     $vars['title_attributes_array']['class'][] = 'title';
   }
-  
+
   // @TODO add aria role support (see zen and adaptivetheme)
 
 } // basement_preprocess_block
@@ -280,10 +280,10 @@ function basement_preprocess_field(&$vars) {
    * ex: field__field_faq_question__field_faq (here, bundle = field_collection field
    * ex: field__field_faq_answer
    */
-   
+
   $element = $vars['element'];
 
-  
+
   // Custom theme_hook_suggestions (no_markup & wrapper_only)
   $wrapper_only_fields = array('field_myexample_field');
   if (in_array($element['#field_name'], $wrapper_only_fields)) {

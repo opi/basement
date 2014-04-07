@@ -21,7 +21,7 @@ stylesheets[all][] = css/lib/print.css
 ; YOUR stylesheet
 stylesheets[all][] = css/style.css
 
-; LESS users should comment the line below, and play with main.less 
+; LESS users should comment the line below, and play with main.less
 ; You must have LESS module installed to compile .less files
 ;stylesheets[all][] = css/style.less
 

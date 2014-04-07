@@ -2,20 +2,20 @@
 /**
  * @file block.tpl.php
  * See http://api.drupal.org/api/drupal/modules!block!block.tpl.php/7
- * 
+ *
  * Theme suggestions:
  * - block.tpl.php
  * - block--REGION.tpl.php
  * - block--MODULE.tpl.php
  * - block--MODULE--DELTA.tpl.php
- * 
+ *
  * See http://drupal.org/node/1089656#block-suggestion
  */
 ?>
-<?php 
+<?php
   $tag = $block->subject ? 'section' : 'div';
   $title_tag = isset($block->title_tag) ? $block->title_tag : 'h2';
-  
+
 ?><<?php print $tag; ?> id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
   <?php print render($title_prefix); ?>

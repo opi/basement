@@ -2,7 +2,7 @@
 /**
  * @file book-navigation.tpl.php
  * See http://api.drupal.org/api/drupal/modules%21book%21book-navigation.tpl.php/7
- * 
+ *
  * Theme suggestions: None by default.
  */
 ?><?php if ($tree || $has_links): ?>
