@@ -224,7 +224,7 @@ function basement_preprocess_node(&$vars) {
   }
   
   // h1 title is displayed on node.tpl, duplicate page.tpl id & class
-  if ($vars['view_mode'] == 'full') {
+  if (node_is_page($node)) {
     $vars['title_attributes_array']['id'] = 'page-title';
     $vars['title_attributes_array']['class'] = 'title';
   }
