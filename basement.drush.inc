@@ -100,6 +100,8 @@ function drush_basement_construct($name = NULL) {
   ));
 
   drush_pm_enable($machine_name);
+  drush_op('system_rebuild_theme_data');
+  drush_op('drupal_theme_rebuild');
 
   if (drush_confirm(dt("\nWould you like to set !name as your default theme?", array('!name' => $name)))) {
     drush_op('theme_enable', array($machine_name));
