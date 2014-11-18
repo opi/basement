@@ -19,14 +19,7 @@
     <?php print $styles; ?>
 
     <!-- IE Stuff. Important ones, must be printed as soon as possible -->
-    <?php print $html5shiv; ?>
-    <?php print $repond; ?>
-
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="<?php print $icon_path; ?>/favicon.ico" />
-    <link rel="apple-touch-icon" href="<?php print $icon_path; ?>/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php print $icon_path; ?>/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php print $icon_path; ?>/apple-touch-icon-114x114.png" />
+    <?php print render($respond); ?>
   </head>
 
   <body class="<?php print $classes; ?>"<?php print $attributes;?>>
