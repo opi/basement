@@ -40,5 +40,5 @@ Theme name
 
 --destination=sites/all/themes/custom
 
-See `drush basement-contstruct --help` for more informations.
+See `drush basement-construct --help` for more informations.
 
