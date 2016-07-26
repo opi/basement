@@ -6,7 +6,6 @@
  * Theme suggestions: None by default.
  */
 ?><!DOCTYPE html>
-<!--[if lt IE 8]><html class="no-js lt-ie9 lt-ie8" lang="<?php print $language->language; ?>"  dir="<?php print $language->dir; ?>"><![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" lang="<?php print $language->language; ?>"  dir="<?php print $language->dir; ?>"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="<?php print $language->language; ?>"  dir="<?php print $language->dir; ?>"><!--<![endif]-->
   <head>
@@ -16,7 +15,7 @@
     <!-- CSS Styles -->
     <?php print $styles; ?>
 
-    <!-- IE Stuff. Important ones, must be printed as soon as possible -->
+    <!-- MediaQueries polyfill for old IE. Important ones, must be printed as soon as possible -->
     <?php print render($respond); ?>
 
     <!-- JS Scripts -->
@@ -33,13 +32,7 @@
     <?php print $page; ?>
     <?php print $page_bottom; ?>
 
-    <!-- IE Stuff. Less important -->
-    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-         chromium.org/developers/how-tos/chrome-frame-getting-started -->
-    <!--[if lt IE 8 ]>
-      <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-      <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-    <![endif]-->
+    <!-- Placeholder polyfill for old IE -->
     <?php print render($placeholder); ?>
   </body>
 </html>
