@@ -138,6 +138,12 @@ function basement_preprocess_html(&$vars) {
     }
   }
 
+  // Classes for views page.
+  $vars['menu_item'] = menu_get_item();
+  if ($vars['menu_item']['page_callback'] == 'views_page') {
+    $vars['classes_array'][] = 'page-views';
+    $vars['classes_array'][] = 'page-views-' . $vars['menu_item']['page_arguments'][0];
+  }
 
   /**
    * Head title
