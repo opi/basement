@@ -242,7 +242,9 @@ function basement_preprocess_node(&$vars) {
  * Implements hook_preprocess_entity().
  * Provided by Entity API module.
  */
-//function basement_preprocess_entity(&$vars) {}
+function basement_preprocess_entity(&$vars) {
+
+}
 
 
 /**
