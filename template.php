@@ -289,6 +289,15 @@ function basement_preprocess_field(&$vars) {
 
   $element = $vars['element'];
 
+  // Global class for long text elements
+  $field_type_text = array(
+    'text',
+    'text_long',
+    'text_with_summary'
+  );
+  if (in_array($element['#field_type'], $field_type_text)) {
+    $vars['classes_array'][] = 'long-text';
+  }
 
   // Custom theme_hook_suggestions (no_markup & wrapper_only)
   $wrapper_only_fields = array('field_myexample_field');
