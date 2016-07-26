@@ -104,12 +104,6 @@ function basement_preprocess_html(&$vars) {
   );
 
 
-  // Force latest IE rendering engine (even in intranet) & Chrome Frame
-  if (is_null(drupal_get_http_header('X-UA-Compatible'))) {
-    drupal_add_http_header('X-UA-Compatible', 'IE=edge,chrome=1');
-  }
-
-
   /**
    * <body> classes
    */
