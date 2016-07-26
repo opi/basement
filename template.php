@@ -246,6 +246,18 @@ function basement_preprocess_node(&$vars) {
 
 
 /**
+ * Implements hook_preprocess_taxonomy_term().
+ */
+function basement_preprocess_taxonomy_term(&$vars) {
+  $term = $vars['term'];
+
+  // Custom classes
+  $vars['classes_array'][] = 'taxonomy-term--' . $vars['view_mode'];
+  $vars['classes_array'][] = 'taxonomy-term--' . $vars['vocabulary_machine_name'];
+}
+
+
+/**
  * Implements hook_preprocess_block().
  */
 function basement_preprocess_block(&$vars) {
