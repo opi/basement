@@ -19,6 +19,9 @@
     <!-- IE Stuff. Important ones, must be printed as soon as possible -->
     <?php print render($respond); ?>
 
+    <!-- JS Scripts -->
+    <?php print $scripts; ?>
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php print $icon_path; ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php print $icon_path; ?>/apple-touch-icon.png" />
@@ -29,7 +32,6 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
-    <?php print $scripts; ?>
 
     <!-- IE Stuff. Less important -->
     <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
