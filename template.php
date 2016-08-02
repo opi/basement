@@ -118,7 +118,7 @@ function basement_preprocess_html(&$vars) {
   // Alias classes, by virtual folders
   $alias = explode('/', drupal_get_path_alias());
   while(!empty($alias)) {
-    $vars['classes_array'][] = 'path-'.implode('-', $alias);
+    $vars['classes_array'][] = drupal_clean_css_identifier('path-'.implode('-', $alias));
     array_pop($alias);
   }
 
@@ -128,7 +128,7 @@ function basement_preprocess_html(&$vars) {
       $vars['classes_array'][] = 'section-node-add';
     }
     elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
-      $vars['classes_array'][] = 'section-node-' . arg(2);
+      $vars['classes_array'][] = drupal_clean_css_identifier('section-node-' . arg(2));
     }
   }
 
@@ -136,7 +136,7 @@ function basement_preprocess_html(&$vars) {
   $vars['menu_item'] = menu_get_item();
   if ($vars['menu_item']['page_callback'] == 'views_page') {
     $vars['classes_array'][] = 'page-views';
-    $vars['classes_array'][] = 'page-views-' . $vars['menu_item']['page_arguments'][0];
+    $vars['classes_array'][] = drupal_clean_css_identifier('page-views-' . $vars['menu_item']['page_arguments'][0]);
   }
 
   /**
@@ -206,8 +206,8 @@ function basement_preprocess_node(&$vars) {
   // Add view-mode & type template suggestions and classes
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['view_mode'];
   $vars['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $vars['view_mode'];
-  $vars['classes_array'][] = 'node-' . $vars['view_mode'];
-  $vars['classes_array'][] = 'node-' . $node->type . '-' . $vars['view_mode'];
+  $vars['classes_array'][] = drupal_clean_css_identifier('node-' . $vars['view_mode']);
+  $vars['classes_array'][] = drupal_clean_css_identifier('node-' . $node->type . '-' . $vars['view_mode']);
 
   // HTML5 submitted info
   $vars['datetime'] = format_date($node->created, 'custom', 'c');
@@ -248,8 +248,8 @@ function basement_preprocess_taxonomy_term(&$vars) {
   $term = $vars['term'];
 
   // Custom classes
-  $vars['classes_array'][] = 'taxonomy-term--' . $vars['view_mode'];
-  $vars['classes_array'][] = 'taxonomy-term--' . $vars['vocabulary_machine_name'];
+  $vars['classes_array'][] = drupal_clean_css_identifier('taxonomy-term--' . $vars['view_mode']);
+  $vars['classes_array'][] = drupal_clean_css_identifier('taxonomy-term--' . $vars['vocabulary_machine_name']);
 }
 
 
@@ -260,8 +260,8 @@ function basement_preprocess_block(&$vars) {
   $block = $vars['block'];
 
   // Add more classes
-  $vars['classes_array'][] = 'block-'.$vars['block_zebra'];
-  $vars['classes_array'][] = 'block-'.$vars['block_id'];
+  $vars['classes_array'][] = drupal_clean_css_identifier('block-'.$vars['block_zebra']);
+  $vars['classes_array'][] = drupal_clean_css_identifier('block-'.$vars['block_id']);
 
   // Block title
   if(empty($vars['block']->subject)) {
