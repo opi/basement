@@ -262,6 +262,7 @@ function basement_preprocess_block(&$vars) {
   // Add more classes
   $vars['classes_array'][] = drupal_html_class('block-'.$vars['block_zebra']);
   $vars['classes_array'][] = drupal_html_class('block-'.$vars['block_id']);
+  $vars['classes_array'][] = $vars['block_html_id'];
 
   // Block title
   if(empty($vars['block']->subject)) {
