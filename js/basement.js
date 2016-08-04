@@ -44,6 +44,16 @@ if (!window.console.log) window.console.log = function () { };
     .css({cursor: 'pointer'});
   } // Drupal.basement.enlargeYourClick
 
+  Drupal.basement.equalHeight = function(elements, extraHeight){
+    var maxHeight = 0;
+    extraHeight = extraHeight || 2;
+    // Calculate optimal minHeight
+    elements.once('equalHeight').css('minHeight', 0).each(function(){
+      // get max height
+      if ($(this).height() > maxHeight)
+        maxHeight = $(this).height() + extraHeight;
+    }).css('minHeight', maxHeight);
+  } // Drupal.basement.equalHeight
 
   /** ********************************************************************
    * BEHAVIORS
@@ -62,6 +72,11 @@ if (!window.console.log) window.console.log = function () { };
       /* Enlarge click zone */
       Drupal.basement.enlargeYourClick($('.example-selector'));
 
+      /* Equal Height elements */
+      $(window).load(function(){
+        // Wait for images loadind
+        Drupal.srctheme.equalHeight($('.example-parent-selector .example-children-selector'));
+      });
 
       /* IE Specific script */
       if ($.browser.msie) {
