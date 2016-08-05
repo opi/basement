@@ -24,6 +24,41 @@ function basement_html_head_alter(&$head_elements) {
 
 
 /**
+ * Implements hook_js_alter().
+ */
+function basement_js_alter(&$js) {
+  // Add themePath settings
+  $js['settings']['data'][] = array('themePath' => base_path() . drupal_get_path('theme', 'basement'));
+
+  // Remove some useless file
+  $js_to_remove = array(
+    'path/to/useless.js'
+  );
+  foreach ($js_to_remove as $js_filename) {
+    if (!empty($js[$js_filename])) {
+      unset($js[$js_filename]);
+    }
+  }
+}
+
+
+/**
+ * Implements hook_css_alter().
+ */
+function basement_css_alter(&$css) {
+  // Remove some useless file
+  $css_to_remove = array(
+    'path/to/useless.css'
+  );
+  foreach ($css_to_remove as $css_filename) {
+    if (!empty($css[$css_filename])) {
+      unset($css[$css_filename]);
+    }
+  }
+}
+
+
+/**
  * Implements hook_process_html_tag().
  * Remove useless attributes (HTML5)
  */
