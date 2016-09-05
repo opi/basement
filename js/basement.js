@@ -75,7 +75,7 @@ if (!window.console.log) window.console.log = function () { };
       /* Equal Height elements */
       $(window).load(function(){
         // Wait for images loadind
-        Drupal.srctheme.equalHeight($('.example-parent-selector .example-children-selector'));
+        Drupal.basement.equalHeight($('.example-parent-selector .example-children-selector'));
       });
 
       /* IE Specific script */
