@@ -33,7 +33,7 @@ if (!window.console.log) window.console.log = function () { };
       if (e.target.tagName != "A" && e.button != 1) {
         var firstLink = $(this).find('a:first'),
             dest = firstLink.attr('href'),
-            blank = firstLink.attr('target');
+            blank = (firstLink.attr('target') == '_blank');
         if (dest && !blank) {
           window.location = dest
         }else if (blank){
