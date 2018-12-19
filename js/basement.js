@@ -30,7 +30,7 @@ if (!window.console.log) window.console.log = function () { };
   Drupal.basement.enlargeYourClick = function(selector){
     $(selector).once('enlargeYourClick').click(function(e){
       // don't handle if user click on a link, or if he click with mouse wheel
-      if (e.target.tagName != "A" && e.button != 1) {
+      if (e.target.tagName != "A" && e.target.tagName != "BUTTON" && e.button != 1) {
         var firstLink = $(this).find('a').not('.contextual-links a').first(),
             dest = firstLink.attr('href'),
             blank = (firstLink.attr('target') == '_blank');
