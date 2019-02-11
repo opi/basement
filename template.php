@@ -233,6 +233,17 @@ function basement_preprocess_page(&$vars) {
 
 
 /**
+ * Implements hook_preprocess_views_view().
+ */
+function basement_preprocess_views_view(&$vars) {
+  $view = $vars['view'];
+
+  // Add name & display combined class
+  $vars['classes_array'][] = drupal_clean_css_identifier('view--' . $view->name . '--' . $view->current_display);
+}
+
+
+/**
  * Implements hook_preprocess_node().
  */
 function basement_preprocess_node(&$vars) {
